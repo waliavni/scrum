@@ -1,0 +1,10 @@
+#!/bin/bash
+# scrumrun
+
+if [ ! -f var/scrum.sqlite3 ]; then
+	./bin/scrumdb create
+fi
+export FLASK_DEBUG=True
+export FLASK_APP=scrum
+export scrum_SETTINGS=config.py
+flask run --host 0.0.0.0 --port 8000
