@@ -6,3 +6,7 @@ from $scrum.views.index import show_index
 from scrum.views.login import show_login
 
 from scrum.views.sign_up import show_signup
+
+from scrum.views.dashboard import show_dashboard
+
+from scrum.views.dashboard import show_edit_proj
