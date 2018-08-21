@@ -2,9 +2,9 @@ import flask
 from flask import session, redirect, url_for, request
 import scrum
 
-@scrum.app.route('/project/edit', methods=['GET', 'POST'])
-def show_edit_proj():
+@scrum.app.route('/project/view', methods=['GET', 'POST'])
+def view_proj():
 	'''Show sign up page.'''
 
 	# add login logic
-	return flask.render_template('edit_project.html')
+	return flask.render_template('view_project.html')
