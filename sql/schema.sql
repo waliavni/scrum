@@ -29,6 +29,7 @@ CREATE TABLE Users(
 CREATE TABLE User_To_Id(
 	email VARCHAR(40) PRIMARY KEY,
 	user_id INTEGER NOT NULL,
+	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Tasks(
@@ -38,7 +39,7 @@ CREATE TABLE Tasks(
 	title VARCHAR(50) NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	description VARCHAR(5000) NOT NULL,
-	hours_required INTEGER NOT NULL,
+	hours_required INTEGER NOT NULL
 );
 
 CREATE TABLE TaskPermission(
