@@ -1,7 +1,7 @@
 /*
-	Users
+	Users -> DONE
 	Projects
-	Tasks
+	Tasks -> DONE
 		- Time to completion
 		- Skills needed
 		- People on it
@@ -48,3 +48,10 @@ CREATE TABLE TaskPermission(
 	FOREIGN KEY(task_id) REFERENCES Tasks(task_id),
 	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
+
+CREATE TABLE TaskUpdate(
+	task_id INTEGER NOT NULL,
+	update_message VARCHAR(1000) NOT NULL,
+	time_curr TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+);
+
