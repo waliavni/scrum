@@ -1,6 +1,9 @@
 /*
 	Users -> DONE
 	Projects
+		- Users
+		- Tasks
+		- Project Description
 	Tasks -> DONE
 		- Time to completion
 		- Skills needed
@@ -9,7 +12,7 @@
 		- Timestamp
 		- Task Description
 		- Deadline
-	Updates
+	Updates -> DONE
 		- Update Message
 		- Timestamp
 		- Task associated with it
@@ -58,3 +61,6 @@ CREATE TABLE TaskUpdate(
 	FOREIGN KEY(task_id) REFERENCES Tasks(task_id)
 );
 
+CREATE TABLE Project(
+	description VARCHAR(1000) NOT NULL
+);
