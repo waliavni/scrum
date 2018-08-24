@@ -64,9 +64,10 @@ CREATE TABLE TaskUpdate(
 CREATE TABLE Project(
 	description VARCHAR(1000) NOT NULL,
 	title VARCHAR(20) NOT NULL,
-	owner VARCHAR(20) NOT NULL,
-	project_id INTEGER NOT NULL
-	PRIMARY KEY(project_id),
+	project_id INTEGER NOT NULL,
+	task_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	PRIMARY KEY(project_id) AUTOINCREMENT,
 	FOREIGN KEY(task_id) REFERENCES Tasks(task_id),
 	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
