@@ -66,4 +66,7 @@ CREATE TABLE Project(
 	title VARCHAR(20) NOT NULL,
 	owner VARCHAR(20) NOT NULL,
 	project_id INTEGER NOT NULL
+	PRIMARY KEY(project_id),
+	FOREIGN KEY(task_id) REFERENCES Tasks(task_id),
+	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
