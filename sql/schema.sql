@@ -62,5 +62,7 @@ CREATE TABLE TaskUpdate(
 );
 
 CREATE TABLE Project(
-	description VARCHAR(1000) NOT NULL
+	description VARCHAR(1000) NOT NULL,
+	title VARCHAR(20) NOT NULL,
+	owner VARCHAR(20) NOT NULL
 );
