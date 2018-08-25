@@ -26,23 +26,25 @@ CREATE TABLE Users(
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	deleted TIMESTAMP,
 	password VARCHAR(255) NOT NULL,	
-	FOREIGN KEY(email) REFERENCES User_To_Id(email)
 );
 
 CREATE TABLE User_To_Id(
 	email VARCHAR(40) PRIMARY KEY,
 	user_id INTEGER NOT NULL,
+	FOREIGN KEY (email) REFERENCES Users(email),
 	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Tasks(
 	task_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	user_id INTEGER NOT NULL,
 	completion TIMESTAMP NOT NULL,
 	skills VARCHAR(1000) NOT NULL,
 	title VARCHAR(50) NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	description VARCHAR(5000) NOT NULL,
-	hours_required INTEGER NOT NULL
+	hours_required INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE TaskPermission(
@@ -56,18 +58,27 @@ CREATE TABLE TaskPermission(
 CREATE TABLE TaskUpdate(
 	update_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	task_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
 	message VARCHAR(1000) NOT NULL,
 	current TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	FOREIGN KEY(task_id) REFERENCES Tasks(task_id)
+	FOREIGN KEY(task_id) REFERENCES Tasks(task_id),
+	FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Project(
+	project_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	description VARCHAR(1000) NOT NULL,
 	title VARCHAR(20) NOT NULL,
-	project_id INTEGER NOT NULL,
 	task_id INTEGER NOT NULL,
 	user_id INTEGER NOT NULL,
-	PRIMARY KEY(project_id) AUTOINCREMENT,
 	FOREIGN KEY(task_id) REFERENCES Tasks(task_id),
 	FOREIGN KEY(user_id) REFERENCES Users(user_id)
+);
+
+CREATE TABLE ProjectPermission(
+	project_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	PRIMARY KEY(project_id, user_id),
+	FOREIGN KEY (project_id) REFERENCES Project(project_id),
+	FOREIGN KEY	(user_id) REFERENCES Users(user_id)
 );
