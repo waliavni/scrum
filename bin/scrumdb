@@ -31,7 +31,7 @@ case $1 in
 		;;
 
 	"destroy")
-		rm -rf var/scrumT.sqlite3
+		rm -rf var/scrum.sqlite3
 		echo '+ rm -rf var/scrum.sqlite3'
 		;;
 
