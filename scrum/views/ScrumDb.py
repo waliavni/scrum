@@ -19,3 +19,9 @@ def insert_row_into_table(table_name, columns, data):
 	'''Insert data into table_name in specified columns.'''
 	database = get_db()
 	cursor = database.cursor()
+
+'''
+Create a function that lets you update a table
+Create a function that retrieves data from a table given a condition
+Create a function that retrieves certain columns of data from a table 
+'''
