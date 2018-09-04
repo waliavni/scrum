@@ -33,9 +33,27 @@ def col_builder(columns):
 	a += columns[num_elements-1]
 	return a
 
+# ['Ash', 'Varma', 'ashvarma@umich.edu'] --> '"Ash", "Varma", "ashvarma@umich.edu"'
+def data_builder(data):
+	a = ''
+	a += '"'
+	num_elements = len(data)
+	for elt in data[0:num_elements-1:]:
+		a += elt;
+		a += '", '
+	a += data[num_elements-1]
+	return a
+
+#function to update a table
+def table_updater(table_name, columns, data):
+	pass
+
+
+
 
 '''
+**need examples of these**
 Create a function that lets you update a table
-Create a function that retrieves data from a table given a condition
+Create a function that retrieves data from a table given a condition (need clarification)
 Create a function that retrieves certain columns of data from a table 
 '''
