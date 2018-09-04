@@ -47,9 +47,12 @@ def data_builder(data):
 #function to update a table
 def table_updater(table_name, columns, data):
 	pass
-
-
-
+#function to retrieve data from a table given condition
+def data_grabber_with_cond(table_name, condition):
+	pass
+#function to retrieve certain columns of data from a table
+def data_grabber_with_col(table_name, columns):
+	pass
 
 '''
 **need examples of these**
