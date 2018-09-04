@@ -30,6 +30,7 @@ def col_builder(columns):
 	for elt in columns[0:num_elements-1:]:
 		a += elt
 		a += ', '
+	a += columns[num_elements-1]
 	return a
 
 
