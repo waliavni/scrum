@@ -1,0 +1,34 @@
+The dashboard page should:
+	show all of the projects
+		each project should have:
+			the title
+			description
+			pending/complete/in progress
+			the avatars of the people working on it (and if you mouse over, their name and clicking on it should take you to that persons profile)
+			An "+Add me" to a project which adds the logged in user to the project and starts assigning them tasks
+			clicking on the project takes you to that projects page with all of their progress
+	show all of the logged in users projects:
+		each project should have the above stuff
+	a create project button
+	an edit project button which takes them to the below page
+
+The edit project should:
+	only be available if the logged in user has the right credential
+	allow the user to edit name/description/remove people/update progress/edit tasks --> takes you to a new page
+	or delete the project entirely
+
+The edit tasks should:
+	load with a specific task and the people assigned to it, and the time estimated, and the skills needed, and the task description
+	allow the logged in user to edit all of that
+	or delete the task
+
+THe login page should:
+	take in a username/password and log them in with their associated credentials (manager/engineer)
+	have a forgot password thing too
+	mask the password
+
+The signup page should:
+	take in name, skills, resume, password, email, and an avatar
+	send confirmation email, and then once verified user can start using account
+
+If they don't have credentials to edit, then clicking on a specific project and specific task should take them to a page where they can view all of the info but not change any of it.
