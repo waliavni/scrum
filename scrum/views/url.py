@@ -1,0 +1,10 @@
+''' The hardcoded global variables for the urls of the project '''
+
+dashboard_url = '/dashboard'
+edit_proj = '/project/edit'
+edit_task = '/task/edit/'
+login = '/accounts/login'
+projects = '/projects/'
+sign_up = '/accounts/create'
+view_proj = '/project/view'
+view_task = '/task/view'
