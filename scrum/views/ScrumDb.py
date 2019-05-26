@@ -1,5 +1,64 @@
 from scrum.model import get_db
 
+
+# TODO
+# examples:
+#
+# table_name = 'Users'
+# columns = ['email', 'user_id']
+# condition = None
+# build_select_query(table_name, columns, condition) --> 'SELECT email, user_id FROM Users'
+#
+# table_name = 'Users'
+# columns = ['email']
+# condition = 'user_id = 4'
+# build_select_query(table_name, columns, condition) --> 'SELECT email FROM Users WHERE user_id = 4'
+#
+# table_name = 'Users'
+# columns = ['email']
+# condition = 'username = waliavni'
+# build_select_query(table_name, columns, condition) --> 'SELECT email FROM Users WHERE username = "waliavni"'
+def build_select_query(table_name, columns, condition=None):
+	'''Build select query string to be executed.'''
+	pass
+
+
+# TODO
+# examples:
+#
+# table_name = 'Users'
+# columns = ['email', 'user_id']
+# values = ['waliavni@umich.edu', 1]
+# build_insert_query(table_name, columns, values) --> 'INSERT INTO Users ("email", user_id) VALUES ("waliavni@umich.edu", 1)'
+#
+# table_name = 'Users'
+# columns = ['email']
+# values = ['waliavni@umich.edu']
+# build_insert_query(table_name, columns, values) --> 'INSERT INTO Users ("email") VALUES ("waliavni@umich.edu")'
+def build_insert_query(table_name, columns, values):
+	'''Build insert query string to be executed.'''
+	pass
+
+
+# TODO
+# examples:
+#
+# table_name = 'Users'
+# columns = ['email', 'user_id']
+# values = ['waliavni@umich.edu', 1]
+# condition = 'username = "waliavni"'
+# build_update_query(table_name, columns, values, condition) --> 'UPDATE Users SET email = "waliavni@umich.edu", user_id = 1 WHERE username = "waliavni"'
+#
+# table_name = 'Users'
+# columns = ['email']
+# values = ['waliavni@umich.edu']
+# condition = 'username = "waliavni"'
+# build_update_query(table_name, columns, values, condition) --> 'UPDATE Users SET email = "waliavni@umich.edu" WHERE username = "waliavni"'
+def build_update_query(table_name, columns, values, condition):
+	'''Build update query string to be executed.'''
+	pass
+
+
 def insert_user(user):
 	'''Insert user into database.'''
 	database = get_db()
